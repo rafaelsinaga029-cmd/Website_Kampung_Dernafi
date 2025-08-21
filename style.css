@@ -1,0 +1,490 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f2f4f8;
+  color: #333;
+  padding: 0 20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d3b66;
+  padding: 18px 40px;
+  color: white;
+  border-radius: 12px;
+  margin: 30px auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: #ffd166;
+  color: #0d3b66;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  max-width: 900px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero h2 {
+  font-size: 34px;
+  color: #0d3b66;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.hero-image {
+  width: 320px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== MAIN CONTENT ===== */
+main.content {
+  margin: 0 auto;
+  padding: 35px;
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.intro {
+  margin-bottom: 40px;
+}
+
+.intro h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #0d3b66;
+}
+
+.intro p {
+  font-size: 16px;
+  color: #444;
+}
+
+/* ===== HIGHLIGHT SECTION ===== */
+.highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.highlight-item.active {
+  padding: 25px;
+  background-color: #e1f5fe;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.highlight-item.active:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-item h3 {
+  color: #0288d1;
+  margin-bottom: 10px;
+}
+
+.highlight-item p {
+  color: #333;
+  font-size: 15px;
+}
+
+/* ===== PAGE SECTIONS ===== */
+.page-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.page-section h2 {
+  color: #0d3b66;
+  margin-bottom: 15px;
+}
+
+.page-section p {
+  color: #444;
+  font-size: 16px;
+}
+
+.page-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+/* ===== WISATA SECTION ===== */
+.wisata-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.wisata-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+.wisata-card.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.wisata-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.wisata-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  transition: filter 0.3s ease;
+}
+
+.wisata-card:hover img {
+  filter: brightness(0.95);
+}
+
+.wisata-card .info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wisata-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d3b66;
+  margin-bottom: 10px;
+}
+
+.wisata-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== GALERI SECTION ===== */
+.galeri-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.galeri-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.galeri-item:hover {
+  transform: scale(1.03);
+}
+
+.galeri-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.galeri-item p {
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===== ANIMASI FADE-IN UNIVERSAL ===== */
+.fade-in,
+.intro,
+.highlight-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.active,
+.intro.active,
+.highlight-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== MODAL POPUP ===== */
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  text-align: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* ===== SCROLLSPY NAV AKTIF ===== */
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.index-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png');/* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+}
+.profil-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png'); /* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.berita-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png'); /* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.galeri-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png'); /* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.wisata-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png'); /* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.monografi-page {
+  background-image: url('images/Biak\ 2_waifu2x_photo_noise3.png'); /* Ganti dengan gambar background yang kamu punya */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.galeri-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.galeri-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.galeri-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+.wisata-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.wisata-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.wisata-card:hover {
+  transform: translateY(-5px);
+}
+
+.wisata-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.wisata-card .info {
+  padding: 15px;
+}
+
+
+/* Umum untuk semua halaman */
+body {
+    background: url('images/Biak\ 2_waifu2x_photo_noise3.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tambahan semi-transparan agar konten terlihat jelas */
+.container,
+.section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Animations: natural & elegant */
+@keyframes pageFadeIn { 
+  from { opacity: 0 } 
+  to { opacity: 1 } 
+}
+
+html, body { min-height: 100% }
+
+/* Fade-in on page load */
+body {
+  opacity: 0;
+  animation: pageFadeIn 0.65s ease forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fade-out on link navigation */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Scroll reveal base */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* When revealed */
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* === End animations === */
+.highlight-img {
+  width: 100%;
+  height: 250px; /* atur tinggi seragam */
+  object-fit: cover; /* biar gambar tidak gepeng, tetap proporsional */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}

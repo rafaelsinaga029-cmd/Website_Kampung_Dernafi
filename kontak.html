@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Kampung Dernafi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>Kampung Dernafi</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil Kampung</a></li>
+      <li><a href="monografi.html">Peta</a></li>
+      <li><a href="wisata.html">Wisata</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="kontak.html" class="active">Kontak</a></li>
+    </ul>
+  </header>
+
+  <main class="content reveal">
+    <h2>Hubungi Kami</h2>
+    <p>Silakan hubungi kami melalui informasi di bawah ini atau kirim pesan melalui formulir yang tersedia.</p>
+
+    <div class="kontak-info">
+      <p><strong>Alamat:</strong> Kampung Dernafi, Distrik Biak Utara, Kabupaten Biak Numfor, Papua</p>
+      <p><strong>Email:</strong> jejak.dernafi@gmail.com</p>
+
+    </div>
+
+    <form class="kontak-form">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; WEBSITE KKN UNCEN 2025
+  </footer>
+
+  <script>
+    // Scroll animation
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+
+
+<!-- Animations fade-in navigation + scroll reveal -->
+<script>
+(function() {
+  // Add scroll-reveal to common text elements for natural appearance
+  var selector = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,.card-title,.card-text';
+  document.querySelectorAll(selector).forEach(function(el){
+    if(!el.classList.contains('scroll-reveal')) el.classList.add('scroll-reveal');
+  });
+
+  // IntersectionObserver for scroll reveal
+  var observer = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.scroll-reveal').forEach(function(el){ observer.observe(el); });
+
+  // Fade-out on internal link navigation
+  function isInternal(a){
+    try { return a.host === window.location.host; } catch(e){ return false; }
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    if(!href || href[0] === '#' || a.target === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    if(!isInternal(a)) return;
+    e.preventDefault();
+    document.body.classList.add('fade-out');
+    setTimeout(function(){ window.location.href = href; }, 300);
+  }, true);
+
+  // Handle back/forward cache so page fades in correctly
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){ document.body.classList.remove('fade-out'); }
+  });
+})();
+</script>
+
+</body>
+</html>

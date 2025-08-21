@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Kampung - Kampung Dernafi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Tambahkan class "profil-page" di tag body -->
+<body class="profil-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <h1>Kampung Dernafi</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html" class="active">Profil Kampung</a></li>
+      <li><a href="monografi.html">Peta</a></li>
+      <li><a href="wisata.html">Wisata</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="content container">
+    <h1>Profil Kampung</h1>
+
+    <section class="section">
+      <img src="images/Kampung dernafi.jpg" alt="Profil Kampung" style="width:100%; max-height:350px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
+      
+      <p>
+        Kampung Dernafi merupakan salah satu kampung yang berada di Distrik Biak Utara, Kabupaten Biak Numfor, Provinsi Papua. 
+        Terletak di bagian utara Pulau Biak, kampung ini memiliki bentang alam khas berupa perpaduan pesisir pantai yang menghadap ke Laut Pasifik serta daratan yang didominasi oleh lahan pertanian, hutan, dan semak belukar. 
+        Kondisi geografis tersebut menjadikan Kampung Dernafi kaya akan potensi sumber daya, baik laut maupun darat. Jalan utama yang membentang di kampung berfungsi sebagai jalur penghubung antar dusun dan akses keluar menuju pusat distrik, 
+        sementara aliran sungai yang melintas dimanfaatkan masyarakat sebagai sumber air dan kebutuhan sehari-hari.
+      </p>
+
+      <p>
+        Selain memiliki lingkungan yang masih asri, Kampung Dernafi juga dikenal dengan kehidupan sosial-budaya masyarakatnya yang kental dengan tradisi dan adat istiadat khas Biak. 
+        Lahan pertanian, perikanan, dan hasil laut menjadi penopang utama ekonomi masyarakat, sedangkan kekayaan budaya dan kearifan lokal menjadi identitas yang dijaga bersama. 
+        Dengan posisi strategis dan sumber daya alam yang melimpah, Kampung Dernafi menyimpan potensi besar untuk dikembangkan, baik dalam sektor pertanian, perikanan, maupun pariwisata. 
+        Keindahan alamnya serta suasana kampung yang tenang menjadikan Dernafi sebagai salah satu permata di Biak Utara.
+      </p>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; WEBSITE KKN UNCEN 2025
+  </footer>
+
+
+<!-- Animations fade-in navigation + scroll reveal -->
+<script>
+(function() {
+  // Add scroll-reveal to common text elements for natural appearance
+  var selector = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,.card-title,.card-text';
+  document.querySelectorAll(selector).forEach(function(el){
+    if(!el.classList.contains('scroll-reveal')) el.classList.add('scroll-reveal');
+  });
+
+  // IntersectionObserver for scroll reveal
+  var observer = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.scroll-reveal').forEach(function(el){ observer.observe(el); });
+
+  // Fade-out on internal link navigation
+  function isInternal(a){
+    try { return a.host === window.location.host; } catch(e){ return false; }
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    if(!href || href[0] === '#' || a.target === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    if(!isInternal(a)) return;
+    e.preventDefault();
+    document.body.classList.add('fade-out');
+    setTimeout(function(){ window.location.href = href; }, 300);
+  }, true);
+
+  // Handle back/forward cache so page fades in correctly
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){ document.body.classList.remove('fade-out'); }
+  });
+})();
+</script>
+
+</body>
+</html>

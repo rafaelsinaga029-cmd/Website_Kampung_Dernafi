@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wisata Kampung Dernafi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Tambahkan class wisata-page ke body utama -->
+<body class="wisata-page">
+
+  <!-- ======= NAVBAR ======= -->
+  <header class="navbar">
+    <h1>Kampung Dernafi</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil Kampung</a></li>
+      <li><a href="monografi.html">Peta</a></li>
+      <li><a href="wisata.html" class="active">Wisata</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </header>
+
+  <!-- ======= MAIN CONTENT ======= -->
+  <main class="page-section">
+    <h2>Wisata Biak Utara</h2>
+    <p>Biak Utara memiliki berbagai destinasi wisata menarik yang cocok untuk wisatawan lokal maupun mancanegara.</p>
+
+    <div class="wisata-gallery">
+      <!-- Wisata Cards -->
+      <div class="wisata-card reveal">
+        <img src="images/kaliwafor.jpg" alt="Kali Wafor Boseren">
+        <div class="info">
+          <h3>Kali Wafor Boseren</h3>
+          <a href="https://maps.app.goo.gl/xpCiNspLweWrgB4G7" target="_blank">
+            K225R+6G, Dernafi, Distrik Biak Utara, Kabupaten Biak Numfor, Papua
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/kali biru mansmor.jpg" alt="Kali Biru Mansmor">
+        <div class="info">
+          <h3>Kali Biru Mansmor</h3>
+          <a href="https://maps.app.goo.gl/eCgzK1gPK8srQWTC7" target="_blank">
+            227G+592, Dernafi, Distrik Biak Utara, Kabupaten Biak Numfor, Papua
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/Kali wabab.jpg" alt="Kali Wabab">
+        <div class="info">
+          <h3>Kali Wabab</h3>
+          <a href="https://maps.app.goo.gl/nJzqw423LqWyeXCn8" target="_blank">
+            32WR+HXX, Saukobye, Distrik Biak Utara, Kabupaten Biak Numfor, Papua
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/taman warbon.jpg" alt="Taman Warbon">
+        <div class="info">
+          <h3>Taman Warbon</h3>
+          <a href="https://maps.app.goo.gl/xpCiNspLweWrgB4G7" target="_blank">
+            32RR+75, Saukobye, Distrik Biak Utara, Kabupaten Biak Numfor, Papua
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/telaga snermas.jpg" alt="Telaga Snermas">
+        <div class="info">
+          <h3>Telaga Snermas</h3>
+          <a href="https://maps.app.goo.gl/aiPoz5DZxBuAowg4A" target="_blank">
+            32HX+346, Unnamed Road, Andei, Saukobye, Distrik Biak Utara, Kabupaten Biak Numfor, Papua 98153
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/Air Terjun Nermnu Snapes.jpg" alt="Air Terjun Nermnu Snapes">
+        <div class="info">
+          <h3>Air Terjun Nermnu Snapes</h3>
+          <a href="https://maps.app.goo.gl/imAqK5HfVASjUDam8" target="_blank">
+            3263+GHW, Nermnu, Distrik Biak Utara, Kabupaten Biak Numfor, Papua 98153
+          </a>
+        </div>
+      </div>
+
+      <div class="wisata-card reveal">
+        <img src="images/Pantai Napebo.jpg" alt="Pantai Napebo">
+        <div class="info">
+          <h3>Pantai Napebo</h3>
+          <a href="https://maps.app.goo.gl/MQ3XzNr88pHj7XNcA" target="_blank">
+            424Q+4G, Saukobye, Distrik Biak Utara, Kabupaten Biak Numfor, Papua
+          </a>
+        </div>
+      </div>
+
+     
+    </div>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    &copy; WEBSITE KKN UNCEN 2025
+  </footer>
+
+  <!-- ======= SCROLL ANIMATION SCRIPT ======= -->
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- JavaScript-->
+  <script src="wisata.js"></script>
+
+  <!-- Animations fade-in navigation + scroll reveal -->
+  <script>
+  (function() {
+    // Add scroll-reveal to common text elements for natural appearance
+    var selector = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,.card-title,.card-text';
+    document.querySelectorAll(selector).forEach(function(el){
+      if(!el.classList.contains('scroll-reveal')) el.classList.add('scroll-reveal');
+    });
+
+    // IntersectionObserver for scroll reveal
+    var observer = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(function(el){ observer.observe(el); });
+
+    // Fade-out on internal link navigation
+    function isInternal(a){
+      try { return a.host === window.location.host; } catch(e){ return false; }
+    }
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a');
+      if(!a) return;
+      var href = a.getAttribute('href');
+      if(!href || href[0] === '#' || a.target === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if(!isInternal(a)) return;
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(function(){ window.location.href = href; }, 300);
+    }, true);
+
+    // Handle back/forward cache so page fades in correctly
+    window.addEventListener('pageshow', function(e){
+      if(e.persisted){ document.body.classList.remove('fade-out'); }
+    });
+  })();
+  </script>
+
+</body>
+</html>
